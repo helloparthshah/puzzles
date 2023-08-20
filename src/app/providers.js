@@ -48,10 +48,7 @@ export function Providers({ children }) {
     <RendererProvider renderer={renderer || createDOMRenderer()}>
       <SSRProvider>
         <FluentProvider theme={webDarkTheme} style={{ minHeight: "100vh" }}>
-          <Topbar />
-          <Col className="w-75" style={{ marginLeft: "25%" }}>
-            {children}
-          </Col>
+          {children}
         </FluentProvider>
       </SSRProvider>
     </RendererProvider>

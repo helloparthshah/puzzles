@@ -26,7 +26,7 @@ export default function Topbar() {
                         {"Puzzle 1 "}
                         {solvedSVG}
                     </Tab>
-                    <Tab value="tab2" disabled>Puzzle 2</Tab>
+                    <Tab value="tab2" >Puzzle 2</Tab>
                     <Tab value="tab3" disabled>Puzzle 3</Tab>
                     <Tab value="tab4" disabled>Puzzle 4</Tab>
                 </TabList>
