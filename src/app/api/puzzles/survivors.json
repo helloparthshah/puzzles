@@ -1,0 +1,53 @@
+{
+    "id": "survivors",
+    "name": "The Last Survivors",
+    "description": "In a desolate world, you seem to find remnants of a civilization that once was. Find out what happened to them.",
+    "image": "/images/kiwi.png",
+    "puzzles": [
+        {
+            "id": "puzzle_1",
+            "name": "Are You Human?",
+            "type": "image",
+            "question": "/images/captcha.jpeg",
+            "hint": "Can you read this?",
+            "answer": "I am HUMan",
+            "description": "On your explorations, you come across a dilapidated door, with signs of corrosion. The green patina on the exposed wiring did not deter the screen from displaying this image."
+        },
+        {
+            "id": "puzzle_2",
+            "name": "The Unknown Code",
+            "type": "text",
+            "question": ".-- . / .-- . .-. . / - .... . / .-.. .- ... - .-.-.-",
+            "answer": "We were the last.",
+            "hint": "Dots and Dashes",
+            "description": "Even though you got in, you wonder what the sign meant. You see a note with this language on it."
+        },
+        {
+            "id": "puzzle_3",
+            "name": "Secrets",
+            "type": "text",
+            "question": "ZBDBMYOKQOJZRJCOGJSIKZSCJHJSBKTDHXJZRY",
+            "answer": "We cannot let them find our digital secrets",
+            "hint": "Stoned wheat in order without V",
+            "description": "The last? What does that mean? You see another note with this language on it. Maybe that would help you understand what the sign meant."
+        },
+        {
+            "id": "puzzle_4",
+            "name": "Password",
+            "type": "text",
+            "question": "Z2l2ZSBtZSBhY2Nlc3M",
+            "answer": "give me access",
+            "hint": "Binary to text",
+            "description": "You see an ancient computer with a password prompt. You need to find the password to get in. You see a note on the computer with this phrase on it."
+        },
+        {
+            "id": "puzzle_5",
+            "name": "Image",
+            "type": "image",
+            "question": "/images/kiwi.png",
+            "answer": "this-is-admin-page",
+            "hint": "Is there something hidden in this image?",
+            "description": "You get in! You see a desktop with a file called \"kiwi.png\". You open it and see this image."
+        }
+    ]
+}
