@@ -25,35 +25,37 @@ export default function Home() {
 
   return (
     <>
-      <h1>Home</h1>
-      <Container className="d-grid gap-3">
+      <h1>Select your world</h1>
+      <Container className="d-flex flex-wrap gap-4 mt-3 justify-content-between">
         {worlds.map((world) => (
-          <Card className='subtle' key={world.id} style={{ width: "40%" }}>
-            <CardPreview >
-              <Container style={{ height: "200px", position: "relative" }}>
-                <Image
-                  src={world.image ?? ""}
-                  alt={world.name}
-                  style={{ objectFit: "contain" }}
-                  fill={true}
-                />
-              </Container>
-            </CardPreview>
-            <CardHeader
-              header={
-                <h3>
-                  {world.name}
-                </h3>
-              }
-              description={world.description}
-            />
-            <CardFooter>
-              <Button className="mt-2" appearance="outline" onClick={() => { window.location.href = "/worlds/" + world.id }}>
-                Play
-              </Button>
-            </CardFooter>
+          <Col key={world.id} xs={12} md={5} lg={3}>
+            <Card className='subtle' key={world.id}>
+              <CardPreview >
+                <Container style={{ height: "200px", position: "relative" }}>
+                  <Image
+                    src={world.image ?? ""}
+                    alt={world.name}
+                    style={{ objectFit: "contain" }}
+                    fill={true}
+                  />
+                </Container>
+              </CardPreview>
+              <CardHeader
+                header={
+                  <h3>
+                    {world.name}
+                  </h3>
+                }
+                description={world.description}
+              />
+              <CardFooter>
+                <Button className="mt-2" appearance="outline" onClick={() => { window.location.href = "/worlds/" + world.id }}>
+                  Play
+                </Button>
+              </CardFooter>
 
-          </Card>
+            </Card>
+          </Col>
         ))}
       </Container>
     </>

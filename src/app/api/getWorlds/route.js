@@ -13,24 +13,6 @@ export async function GET() {
             description: puzzleJson.description,
             image: puzzleJson.image,
         });
-        worlds.push({
-            id: puzzleJson.id,
-            name: puzzleJson.name,
-            description: puzzleJson.description,
-            image: puzzleJson.image,
-        });
-        worlds.push({
-            id: puzzleJson.id,
-            name: puzzleJson.name,
-            description: puzzleJson.description,
-            image: puzzleJson.image,
-        });
-        worlds.push({
-            id: puzzleJson.id,
-            name: puzzleJson.name,
-            description: puzzleJson.description,
-            image: puzzleJson.image,
-        });
     }
     return NextResponse.json(worlds)
 }
