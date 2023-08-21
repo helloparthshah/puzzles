@@ -19,11 +19,7 @@ export default function Page() {
     const [puzzles, setPuzzles] = useState([]);
     const [name, setName] = useState([]);
     const [selected, setSelected] = useState("");
-
-    useEffect(() => {
-        // get world from /worlds/world
-        console.log(params.world);
-    }, [params]);
+    const [image, setImage] = useState("");
 
     useEffect(() => {
         fetch('/api/getAllPuzzlesForWorld', {
@@ -38,11 +34,12 @@ export default function Page() {
                 let dataPuzzles = data.puzzles;
                 for (let i = 0; i < dataPuzzles.length; i++) {
                     dataPuzzles[i].solved = false;
-                    dataPuzzles[i].disabled = false;
+                    dataPuzzles[i].disabled = true;
                 }
                 dataPuzzles[0].disabled = false;
                 setPuzzles(dataPuzzles);
                 setName(data.name);
+                setImage(data.image);
                 setSelected(dataPuzzles[0].id);
             });
     }, []);
@@ -77,7 +74,13 @@ export default function Page() {
     return (
         <>
             <Topbar name={name} puzzles={puzzles} selected={selected} setSelected={setSelected} />
-            <Col className="w-75" style={{ marginLeft: "25%" }}>
+            <Col className="w-75" style={{
+                marginLeft: "25%",
+                backgroundImage: `url("${image}")`,
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+            }}>
                 <Puzzle puzzle={(puzzles.find((p) => p.id === selected)) ?? {}} onSubmit={onSubmit} />
             </Col>
         </>

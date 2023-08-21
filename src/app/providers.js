@@ -1,7 +1,7 @@
 'use client';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './globals.css'
+import 'styles/globals.css'
 // Import necessary dependencies from 'react'
 import { useEffect, useState } from 'react'
 // Import necessary dependencies from '@fluentui/react-components'
@@ -11,6 +11,9 @@ import {
   FluentProvider,
   webLightTheme,
   webDarkTheme,
+  teamsDarkTheme,
+  teamsLightTheme,
+  teamsHighContrastTheme,
   SSRProvider,
 } from '@fluentui/react-components';
 import Topbar from '../../components/topbar';

@@ -6,7 +6,14 @@ import {
     Tab,
     TabList,
     TabListProps,
+    Divider,
+    ToolbarButton,
+    Text,
+    Link
 } from "@fluentui/react-components";
+import {
+    ArrowLeft24Regular
+} from "@fluentui/react-icons";
 import { useState, useEffect } from 'react';
 import solved from 'public/solved.svg'
 import locked from 'public/lock.svg'
@@ -14,16 +21,29 @@ import Image from 'next/image';
 
 export default function Topbar({ name, puzzles, selected, setSelected }) {
     return (
-        <Container className="flex-column w-25 h-100 bg-darker" style={{ position: "fixed" }}>
-            <h2>{name}</h2>
+        <Container className="d-flex flex-column w-25 h-100 bg-darker justify-content-between" style={{ position: "fixed" }}>
             <div>
-                <TabList vertical='true' selectedValue={selected} onTabSelect={(e, props) => { setSelected(props.value) }}>
+                <ToolbarButton icon={<ArrowLeft24Regular />} as="a" href={"/"} />
+                <h2>{name}</h2>
+                <Divider />
+                <TabList
+                    className='mt-3'
+                    vertical='true'
+                    selectedValue={selected} onTabSelect={
+                        (e, props) => {
+                            setSelected(props.value)
+                        }}
+                >
                     {
                         puzzles.length > 0 ? (puzzles.map((puzzle) => {
                             return (
-                                <Tab value={puzzle.id} disabled={puzzle.disabled}>
+                                <Tab
+                                    value={puzzle.id}
+                                    disabled={puzzle.disabled}
+                                    className='mt-2'
+                                >
                                     {puzzle.name}
-                                    <span className='ms-2'>
+                                    <span>
                                         {puzzle.disabled ? <Image
                                             src={locked}
                                             alt="Locked"
@@ -40,18 +60,12 @@ export default function Topbar({ name, puzzles, selected, setSelected }) {
                             )
                         })) : <></>
                     }
-                    {/* <Tab value="tab1">
-                        {"Puzzle 1 "}
-                        {solvedSVG}
-                    </Tab>
-                    <Tab value="tab2" >Puzzle 2</Tab>
-                    <Tab value="tab3" disabled>
-                        {"Puzzle 3 "}
-                        {lockedSVG}
-                    </Tab>
-                    <Tab value="tab4" disabled>Puzzle 4</Tab> */}
                 </TabList>
             </div>
+            <span className='mb-5'>
+                <Divider className='mb-2' />
+                <Text className='mt-3'>Made with ❤️ by <Link href="https://github.com/helloparthshah">Parth Shah</Link> and <Link href="https://github.com/kunpai">Kunal Pai</Link></Text>
+            </span>
         </Container>
     );
 };

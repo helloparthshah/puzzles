@@ -1,0 +1,89 @@
+{
+    "id": "test",
+    "name": "Test World",
+    "description": "This is a test world. It is used to test the functionality of the game.",
+    "image": "/images/test.png",
+    "puzzles": [
+        {
+            "id": "puzzle_1",
+            "name": "Test puzzle 1",
+            "type": "text",
+            "question": "Write test here",
+            "hint": "Test",
+            "answer": "test",
+            "description": "This is a test puzzle. It is used to test the functionality of the game."
+        },
+        {
+            "id": "puzzle_2",
+            "name": "Test puzzle 2",
+            "type": "text",
+            "question": "Write test here",
+            "hint": "Test",
+            "answer": "test",
+            "description": "This is a test puzzle. It is used to test the functionality of the game."
+        },
+        {
+            "id": "puzzle_3",
+            "name": "Test puzzle 3",
+            "type": "text",
+            "question": "Write test here",
+            "hint": "Test",
+            "answer": "test",
+            "description": "This is a test puzzle. It is used to test the functionality of the game."
+        },
+        {
+            "id": "puzzle_4",
+            "name": "Test puzzle 4",
+            "type": "text",
+            "question": "Write test here",
+            "hint": "Test",
+            "answer": "test",
+            "description": "This is a test puzzle. It is used to test the functionality of the game."
+        },
+        {
+            "id": "puzzle_5",
+            "name": "Test puzzle 5",
+            "type": "text",
+            "question": "Write test here",
+            "hint": "Test",
+            "answer": "test",
+            "description": "This is a test puzzle. It is used to test the functionality of the game."
+        },
+        {
+            "id": "puzzle_6",
+            "name": "Test puzzle 6",
+            "type": "text",
+            "question": "Write test here",
+            "hint": "Test",
+            "answer": "test",
+            "description": "This is a test puzzle. It is used to test the functionality of the game."
+        },
+        {
+            "id": "puzzle_7",
+            "name": "Test puzzle 7",
+            "type": "text",
+            "question": "Write test here",
+            "hint": "Test",
+            "answer": "test",
+            "description": "This is a test puzzle. It is used to test the functionality of the game."
+        },
+        {
+            "id": "puzzle_8",
+            "name": "Test puzzle 8",
+            "type": "text",
+            "question": "Write test here",
+            "hint": "Test",
+            "answer": "test",
+            "description": "This is a test puzzle. It is used to test the functionality of the game."
+        },
+        {
+            "id": "puzzle_9",
+            "name": "Test puzzle 9",
+            "type": "text",
+            "question": "Write test here",
+            "hint": "Test",
+            "answer": "test",
+            "description": "This is a test puzzle. It is used to test the functionality of the game."
+        }
+    ]
+}

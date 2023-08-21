@@ -1,8 +1,8 @@
 {
     "id": "survivors",
-    "name": "The Last Survivors",
+    "name": "The Last Survivor",
     "description": "In a desolate world, you seem to find remnants of a civilization that once was. Find out what happened to them.",
-    "image": "/images/kiwi.png",
+    "image": "/images/survivor.png",
     "puzzles": [
         {
             "id": "puzzle_1",
