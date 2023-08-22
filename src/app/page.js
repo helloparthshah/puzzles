@@ -13,7 +13,6 @@ import {
   LargeTitle
 } from "@fluentui/react-components";
 import Image from "next/image";
-// import StarfieldAnimation from "react-starfield-animation";
 
 export default function Home() {
   const [worlds, setWorlds] = useState([]);
@@ -33,7 +32,7 @@ export default function Home() {
           height: "100vh",
         }}
       >
-        {/* <StarfieldAnimation
+        <div
           style={{
             position: "fixed",
             width: "100%",
@@ -41,7 +40,7 @@ export default function Home() {
             zIndex: 0,
             backgroundImage: "linear-gradient( rgb(0, 0, 0) 0%, rgb(41, 41, 41) 74%)"
           }}
-        /> */}
+        />
         <div className='d-flex flex-column justify-content-center align-items-center' style={{ zIndex: 1 }}>
           <Display align='center' className='mb-3'>
             Enigma Odyssey
