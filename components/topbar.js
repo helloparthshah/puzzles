@@ -41,6 +41,7 @@ export default function Topbar({ name, puzzles, selected, setSelected }) {
                                     value={puzzle.id}
                                     disabled={puzzle.disabled}
                                     className='mt-2'
+                                    key={puzzle.id}
                                 >
                                     {puzzle.name}
                                     <span>
