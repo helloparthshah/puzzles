@@ -1,13 +1,6 @@
 'use client';
 
 // Import necessary dependencies from '@fluentui/react-components'
-import {
-    makeStyles,
-    shorthands,
-    Text,
-    Title1,
-    tokens,
-} from '@fluentui/react-components';
 import { Col, Container } from 'react-bootstrap';
 import Topbar from '/components/topbar';
 import Puzzle from '/components/puzzle';
