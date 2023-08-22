@@ -9,5 +9,6 @@ export async function POST(request, context) {
     }
     let worldJson = JSON.parse(JSON.stringify(worldFile))
     worldJson.puzzles = puzzles
+    delete worldJson.default
     return NextResponse.json(worldJson)
 }
