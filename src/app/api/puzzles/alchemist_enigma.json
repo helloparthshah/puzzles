@@ -1,0 +1,53 @@
+{
+  "id": "alchemist_enigma",
+  "name": "The Alchemist's Enigma",
+  "description": "You've stumbled upon the hidden laboratory of a long-lost alchemist. A series of cryptic puzzles bars the way to their ultimate creation.",
+  "image": "/images/alchemist_lab.jpg",
+  "puzzles": [
+    {
+      "id": "puzzle_1",
+      "name": "The Elemental Lock",
+      "type": "image",
+      "question": "/images/elemental_lock.jpg",
+      "hint": "Follow the classical order of the elements by assumed density.",
+      "answer": "Fire",
+      "description": "The entrance is sealed by a lock with four dials, three are set: Earth, Water, Air. A nearby chart shows the four fundamental elements. You must set the fourth dial to gain entry."
+    },
+    {
+      "id": "puzzle_2",
+      "name": "The Whispered Incantation",
+      "type": "text",
+      "question": "GUR ZRGNY VF GUR XRL",
+      "answer": "THE METAL IS THE KEY",
+      "hint": "A wheel on the wall spins halfway around.",
+      "description": "Once inside, a disembodied voice echoes a cryptic phrase. It sounds like an incantation, but the words are jumbled. A carving on the wall depicts a wheel of letters."
+    },
+    {
+      "id": "puzzle_3",
+      "name": "The Coded Grimoire",
+      "type": "text",
+      "question": "GL XIVZGV TLOW LMV NFHG URIHG FMWVIHGZMW OVZW",
+      "answer": "TO CREATE GOLD ONE MUST FIRST UNDERSTAND LEAD",
+      "hint": "To understand the script, one's perspective of the alphabet must be reversed.",
+      "description": "You find the alchemist's grimoire, but a key passage is in code. The script seems to flow backwards, as if in a mirror."
+    },
+    {
+      "id": "puzzle_4",
+      "name": "The Transmutation Formula",
+      "type": "text",
+      "question": "4d61676e756d204f707573",
+      "answer": "Magnum Opus",
+      "hint": "A strange script of 16 characters, where every pair seems to form a single letter.",
+      "description": "Tucked into the grimoire is a parchment with a long string of numbers and letters. It looks like a formula, perhaps the name of the final work."
+    },
+    {
+      "id": "puzzle_5",
+      "name": "The Final Creation",
+      "type": "image",
+      "question": "/images/transmutation_equation.png",
+      "answer": "Aurum",
+      "hint": "What element is created when Mercury (Hg) captures an electron, causing a proton to become a neutron?",
+      "description": "You've reached the final chamber. A projection of light shows a nuclear transmutation equation. Solve for the missing element to reveal the true name of the stone."
+    }
+  ]
+}

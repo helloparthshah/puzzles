@@ -38,15 +38,15 @@ export default function Home() {
             width: "100%",
             height: "100%",
             zIndex: 0,
-            backgroundImage: "linear-gradient( rgb(0, 0, 0) 0%, rgb(41, 41, 41) 74%)"
+            backgroundImage: "linear-gradient( #141126 0%, #6e46b5 74%)"
           }}
         />
         <div className='d-flex flex-column justify-content-center align-items-center' style={{ zIndex: 1 }}>
           <Display align='center' className='mb-3'>
-            Enigma Odyssey
+            The Enigma Vault
           </Display>
           <LargeTitle align='center'>
-            Welcome to the world of puzzles
+            Welcome to the Enigma Vault! Embark on a journey through a collection of unique puzzle worlds, each filled with intriguing challenges designed to test your logic and creativity. Choose your world and dive in - can you solve them all?
           </LargeTitle>
         </div>
       </Container>
