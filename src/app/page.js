@@ -1,18 +1,12 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import {
-  Card,
-  CardFooter,
-  CardHeader,
-  CardPreview,
-  Button,
-  Text,
   Display,
   LargeTitle
 } from "@fluentui/react-components";
-import Image from "next/image";
+import World from '../../components/world';
 
 export default function Home() {
   const [worlds, setWorlds] = useState([]);
@@ -56,34 +50,7 @@ export default function Home() {
         </LargeTitle>
         <Container className="d-flex flex-wrap gap-4 mt-3">
           {worlds.map((world) => (
-            <Col key={world.id} xs={12} md={5} lg={3}>
-              <Card className='subtle' key={world.id} style={{ minHeight: "400px" }}>
-                <CardPreview >
-                  <Container style={{ height: "200px", position: "relative" }}>
-                    <Image
-                      src={world.image ?? ""}
-                      alt={world.name}
-                      style={{ objectFit: "cover" }}
-                      fill={true}
-                    />
-                  </Container>
-                </CardPreview>
-                <CardHeader
-                  header={
-                    <h3>
-                      {world.name}
-                    </h3>
-                  }
-                  description={world.description}
-                />
-                <CardFooter>
-                  <Button as="a" className="mt-2" appearance="outline" href={`/worlds/${world.id}`}>
-                    Play
-                  </Button>
-                </CardFooter>
-
-              </Card>
-            </Col>
+            <World world = {world}/>
           ))}
         </Container>
       </Container>

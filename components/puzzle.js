@@ -28,6 +28,8 @@ export default function Puzzle({ puzzle, onSubmit }) {
     const toasterId = useId("toaster");
     const { dispatchToast } = useToastController(toasterId);
     const [answer, setAnswer] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSavingProgress, setIsSavingProgress] = useState(false);
 
     useEffect(() => {
         if (!puzzle) {
@@ -82,6 +84,15 @@ export default function Puzzle({ puzzle, onSubmit }) {
                         header={
                             <Body1>
                                 <b>{puzzle.name ?? ""}</b>
+                                {puzzle.solved && (
+                                    <span style={{ 
+                                        marginLeft: '10px', 
+                                        color: '#28a745', 
+                                        fontSize: '1.2em' 
+                                    }}>
+                                        ✓ Solved
+                                    </span>
+                                )}
                             </Body1>
                         }
                         description={<Caption1>Hint: {puzzle.hint ?? ""}</Caption1>}
@@ -109,35 +120,80 @@ export default function Puzzle({ puzzle, onSubmit }) {
                         <Label htmlFor="answer">
                             Answer
                         </Label>
-                        <Input id="answer" placeholder="Type your answer here" value={answer} onChange={(e) => {
-                            setAnswer(e.target.value)
-                        }} />
-                        <Button className="mt-2" appearance="outline" onClick={async () => {
-                            let isCorrect = await onSubmit(answer);
-                            if (isCorrect) {
-                                setAnswer("");
-                                dispatchToast(
-                                    <Toast>
-                                        <ToastTitle>
-                                            Correct Answer!
-                                        </ToastTitle>
-                                        <ToastBody>Continue onto the next question</ToastBody>
-                                    </Toast>,
-                                    { intent: "success" }
-                                );
-                            } else {
-                                dispatchToast(
-                                    <Toast>
-                                        <ToastTitle>
-                                            Incorrect Answer!
-                                        </ToastTitle>
-                                        <ToastBody>Hint: {puzzle.hint}</ToastBody>
-                                    </Toast>,
-                                    { intent: "error" }
-                                );
-                            }
-                        }}>
-                            Submit
+                        <Input 
+                            id="answer" 
+                            placeholder={puzzle.solved ? "Puzzle already solved" : "Type your answer here"} 
+                            value={answer} 
+                            disabled={puzzle.solved}
+                            onChange={(e) => {
+                                setAnswer(e.target.value)
+                            }} 
+                        />
+                        <Button 
+                            className="mt-2" 
+                            appearance="outline" 
+                            disabled={isSubmitting || isSavingProgress || puzzle.solved}
+                            onClick={async () => {
+                                setIsSubmitting(true);
+                                try {
+                                    let isCorrect = await onSubmit(answer);
+                                    if (isCorrect) {
+                                        setAnswer("");
+                                        setIsSavingProgress(true);
+                                        
+                                        // Show success toast with progress saving indicator
+                                        dispatchToast(
+                                            <Toast>
+                                                <ToastTitle>
+                                                    Correct Answer!
+                                                </ToastTitle>
+                                                <ToastBody>Saving progress and unlocking next puzzle...</ToastBody>
+                                            </Toast>,
+                                            { intent: "success" }
+                                        );
+                                        
+                                        // Give a brief moment for progress saving to complete
+                                        setTimeout(() => {
+                                            setIsSavingProgress(false);
+                                            dispatchToast(
+                                                <Toast>
+                                                    <ToastTitle>
+                                                        Progress Saved!
+                                                    </ToastTitle>
+                                                    <ToastBody>Continue onto the next question</ToastBody>
+                                                </Toast>,
+                                                { intent: "success" }
+                                            );
+                                        }, 800);
+                                    } else {
+                                        dispatchToast(
+                                            <Toast>
+                                                <ToastTitle>
+                                                    Incorrect Answer!
+                                                </ToastTitle>
+                                                <ToastBody>Hint: {puzzle.hint}</ToastBody>
+                                            </Toast>,
+                                            { intent: "error" }
+                                        );
+                                    }
+                                } catch (error) {
+                                    console.error('Error submitting answer:', error);
+                                    setIsSavingProgress(false);
+                                    
+                                    dispatchToast(
+                                        <Toast>
+                                            <ToastTitle>
+                                                Submission Error
+                                            </ToastTitle>
+                                            <ToastBody>There was an error submitting your answer. Please try again.</ToastBody>
+                                        </Toast>,
+                                        { intent: "error" }
+                                    );
+                                } finally {
+                                    setIsSubmitting(false);
+                                }
+                            }}>
+                            {puzzle.solved ? "Solved" : isSubmitting ? "Checking..." : isSavingProgress ? "Saving Progress..." : "Submit"}
                         </Button>
                     </Container>
                 </Card >
