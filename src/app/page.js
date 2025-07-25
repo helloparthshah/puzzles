@@ -38,7 +38,7 @@ export default function Home() {
             width: "100%",
             height: "100%",
             zIndex: 0,
-            backgroundImage: "linear-gradient( #141126 0%, #6e46b5 74%)"
+            backgroundImage: "linear-gradient( #141126 0%, #30255f 100%)"
           }}
         />
         <div className='d-flex flex-column justify-content-center align-items-center' style={{ zIndex: 1 }}>
