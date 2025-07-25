@@ -17,12 +17,7 @@ export default function World({ world }) {
     const {
         worldProgress,
         isReady: progressReady,
-        getSolvedPuzzles,
-        getUnlockedPuzzles,
-        isPuzzleSolved,
-        isPuzzleUnlocked,
-        resetProgress
-    } = useProgress(world.id);
+        getSolvedPuzzles } = useProgress(world.id);
 
     const [puzzles, setPuzzles] = useState([])
 
@@ -44,7 +39,7 @@ export default function World({ world }) {
         } else {
             loadPuzzles();
         }
-    }, [world.puzzles])
+    }, [world.puzzles, loadPuzzles]);
 
     const isSolved = (worldId) => {
         if (!progressReady) return false;

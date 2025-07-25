@@ -50,7 +50,7 @@ export default function Home() {
         </LargeTitle>
         <Container className="d-flex flex-wrap gap-4 mt-3">
           {worlds.map((world) => (
-            <World world = {world}/>
+            <World world = {world} key = {world.id}/>
           ))}
         </Container>
       </Container>

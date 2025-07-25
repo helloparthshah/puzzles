@@ -1,12 +1,9 @@
 import { Container } from "react-bootstrap"
 import {
-    makeStyles,
     Body1,
     Caption1,
     Button,
-    shorthands,
     Card,
-    CardFooter,
     CardHeader,
     CardPreview,
     Text,
@@ -16,10 +13,8 @@ import {
     useToastController,
     Toast,
     useId,
-    Link,
     ToastTitle,
     ToastBody,
-    ToastFooter,
 } from "@fluentui/react-components";
 import Image from "next/image";
 import { useEffect, useState } from "react";
